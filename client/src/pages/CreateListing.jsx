@@ -9,7 +9,7 @@ export default function CreateListing() {
     const navigate = useNavigate();
     const [files, setFiles] = useState([]);
     const [formData, setFormData] = useState({
-        imageUrls: [],
+    imageUrls: [],
     name: '',
     description: '',
     address: '',
