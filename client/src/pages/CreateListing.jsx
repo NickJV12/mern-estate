@@ -248,7 +248,7 @@ export default function CreateListing() {
                     <div className="flex items-center gap-2">
                         <input 
                           type='number' 
-                          id="regularPrice" 
+                          id='regularPrice' 
                           min='5000' 
                           max='1000000' 
                           required
@@ -257,14 +257,15 @@ export default function CreateListing() {
                           value={formData.regularPrice} />
                         <div className="flex items-center gap-2">
                         <p>Regular Price</p>
-                        <span className="text-xs">(₹ / month)</span>
+                        {formData.type === 'rent' && (
+                  <span className='text-xs'>(₹ / month)</span>)}
                         </div>
                     </div>
                     {formData.offer && (
                         <div className="flex items-center gap-2">
                         <input 
                           type='number' 
-                          id="discountPrice" 
+                          id='discountPrice' 
                           min='0' 
                           max='100000' 
                           required
@@ -273,7 +274,9 @@ export default function CreateListing() {
                           value={formData.discountPrice} />
                         <div className="flex flex-col items-center">
                         <p>Discounted Price</p>
-                        <span className="text-xs">(₹ / month)</span>
+                        {formData.type === 'rent' && (
+                    <span className='text-xs'>( ₹ / month)</span>
+                  )}
                         </div>
                         </div>
                     )}
