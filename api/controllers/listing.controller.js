@@ -71,6 +71,7 @@ export const getListings = async(req, res, next) =>{
        if(offer === undefined || offer === 'false'){
         offer = { $in: [false, true] };
        }
+       let furnished = req.query.furnished;
        if (furnished === undefined || furnished === 'false'){
         furnished = { $in: [false, true] };
        }
